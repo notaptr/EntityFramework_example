@@ -13,7 +13,7 @@ Example application, demonstrating programming on C# whith EntityFramework and A
 
 - __Aptechka.Data__       - файл тестовой базы данных для MS-SQL Server
 - __Aptechka.Logs__       - файл лога базы данных
-- __AptechkaAPI__         - каталог WEB API приложения
+- __AptechkaAPI__         - каталог консольного WEB API приложения
 - __AptechkaWPF__         - каталог основного клиентского приложения на NET6.0 для WPF
 
 Вы можете использовать этот код для самостоятельного изучения и экспериментов. Запрещается любое коммерческое использование кода или его части.
