@@ -1,0 +1,35 @@
+﻿<Window x:Name ="fmAddress" x:Class="AptechkaWPF.AddressForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AptechkaWPF"
+        mc:Ignorable="d"
+        Title="Справочник адресов" Loaded="fmAddress_Loaded" MinWidth="300" MinHeight="200" Icon="/аптека_иконка.png" SizeToContent="Height" WindowStartupLocation="CenterScreen" Topmost="True" MaxWidth="600" MaxHeight="900">
+
+    <Grid Margin="0,0,0,0">
+        <Label Content="Справочник адресов" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Button Content="Записать" Margin="0,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="61" Click="btSave_Click"/>
+        <Image HorizontalAlignment="Right" Height="17" Margin="0,8,186,0" VerticalAlignment="Top" Width="17" Source="/glass.png" Stretch="UniformToFill" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBox x:Name="tbSearch" Margin="0,7,66,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" TextChanged="tbSearch_TextChanged" ToolTip="Введите текст для поиска"/>
+        <DataGrid x:Name="fDataGrid" Margin="0,32,0,0" FrozenColumnCount="1" IsTextSearchEnabled="True" AutoGenerateColumns="False"
+                  IsReadOnly="False" IsManipulationEnabled="True" HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch" ColumnWidth="*" AddingNewItem="fDataGrid_AddingNewItem">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding Id}" MaxWidth="40"/>
+                <DataGridTextColumn Header="Город"  Binding="{Binding City, Mode=TwoWay}" MinWidth="50"/>
+                <DataGridTextColumn Header="Улица"  Binding="{Binding Street, Mode=TwoWay}" MinWidth="10"/>
+                <DataGridTextColumn Header="Дом"  Binding="{Binding Home, Mode=TwoWay}" MaxWidth="40"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

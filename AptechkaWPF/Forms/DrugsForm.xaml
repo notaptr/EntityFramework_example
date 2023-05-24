@@ -1,0 +1,46 @@
+﻿<Page x:Name ="fmDrugs" x:Class="AptechkaWPF.DrugsForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AptechkaWPF"
+        mc:Ignorable="d"
+        Title="Справочник Медикаментов" Loaded="fmDrugs_Loaded" >
+
+    <Grid Margin="0,0,0,0">
+        <Grid.Resources>
+            <DataTemplate x:Key="DateOfManufacture" >
+                <!-- 0:ddd dd MMM yyyy HH:MM -->
+                <TextBlock Text="{Binding DateOfManufacture, StringFormat={}{0:dd MMM yyyy}}" HorizontalAlignment="Center" />
+            </DataTemplate>
+            <DataTemplate x:Key="BestBeforeDate" >
+                <TextBlock Text="{Binding BestBeforeDate, StringFormat={}{0:dd MMM yyyy}}" HorizontalAlignment="Center" />
+            </DataTemplate>
+        </Grid.Resources>
+        <Label Content="Справочник лекарств" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Button Content="Добавить" Margin="0,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="61" Click="btAdd_Click"/>
+        <Image HorizontalAlignment="Right" Height="17" Margin="0,8,187,0" VerticalAlignment="Top" Width="17" Source="/glass.png" Stretch="UniformToFill" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBox x:Name="tbSearch" Margin="0,7,66,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" TextChanged="tbSearch_TextChanged" ToolTip="Введите текст для поиска"/>
+        <DataGrid x:Name="fDataGrid" Margin="0,32,0,0" FrozenColumnCount="1" IsTextSearchEnabled="True" AutoGenerateColumns="False"
+                  IsReadOnly="True" IsManipulationEnabled="True" MouseDoubleClick="fDataGrid_MouseDoubleClick"  HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding Id}" MaxWidth="40"/>
+                <DataGridTextColumn Header="Название"  Binding="{Binding Name}" MinWidth="300"/>
+                <DataGridTemplateColumn Header="Дата производства" CellTemplate="{StaticResource DateOfManufacture}" MinWidth="60" MaxWidth="80"/>
+                <DataGridTemplateColumn Header="Срок годности" CellTemplate="{StaticResource BestBeforeDate}" MinWidth="60" MaxWidth="80"/>
+                <DataGridTextColumn Header="Цена"  Binding="{Binding Price}" MinWidth="60" MaxWidth="80"/>
+                <DataGridTextColumn Header="Производитель"  Binding="{Binding Producer.Name}" MaxWidth="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

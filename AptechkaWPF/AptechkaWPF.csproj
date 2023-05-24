@@ -1,0 +1,108 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <PackageIcon>аптека_иконка.png</PackageIcon>
+    <PackageIconUrl />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="glass.png" />
+    <None Remove="аптека_иконка.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Forms\DrugsForm - Копировать %282%29 - Копировать %282%29.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DrugsForm - Копировать (2).xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\DrugsForm - Копировать %282%29 - Копировать - Копировать.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DrugsForm - Копировать (2) - Копировать.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\DrugsForm - Копировать %282%29 - Копировать.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DrugsForm - Копировать (2).xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\DrugsForm - Копировать %282%29.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DrugsForm.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\ProducersForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\DrugsForm - Копировать - Копировать %282%29 - Копировать.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DrugsForm - Копировать - Копировать (2).xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\DrugsForm - Копировать - Копировать %283%29.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DrugsForm - Копировать.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\DrugsForm - Копировать - Копировать - Копировать %282%29.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DrugsForm - Копировать - Копировать.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\DrugsForm - Копировать - Копировать - Копировать - Копировать.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DrugsForm - Копировать - Копировать - Копировать.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\DrugstoresForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\DrugsForm - Копировать - Копировать %282%29.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DrugsForm - Копировать.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\DrugsForm - Копировать - Копировать - Копировать.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DrugsForm - Копировать - Копировать.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\DrugsForm - Копировать - Копировать.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DrugsForm - Копировать.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\DrugsForm - Копировать.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DrugsForm.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\DrugsForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Forms\DrugstoresForm.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\ProducersForm.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\DrugsForm.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="glass.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="аптека_иконка.png" />
+  </ItemGroup>
+
+</Project>
